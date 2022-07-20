@@ -1,0 +1,6 @@
+[submodule "terraform-template"]
+	path = terraform-template
+	url = https://github.com/fr-platform/terraform-template
+[submodule "terraform-azurerm-template"]
+	path = terraform-azurerm-template
+	url = https://github.com/fr-platform/terraform-azurerm-template
