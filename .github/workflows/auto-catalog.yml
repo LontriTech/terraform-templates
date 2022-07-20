@@ -24,8 +24,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Add Git Submodules
-      run: "print 'org repos: ${{ steps.get_latest_release.get_org_repos.data }}'"
-      shell: python3
+      run: |
+        print('org repos: ${{ steps.get_latest_release.get_org_repos.data }}')
+      shell: python
 
     #- name: Commit Update
     #  uses: stefanzweifel/git-auto-commit-action@v4
