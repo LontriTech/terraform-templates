@@ -20,8 +20,6 @@ jobs:
       id: get_org_repos
       with:
         route: GET /orgs/fr-platform/repos
-        owner: octokit
-        repo: request-action
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
