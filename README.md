@@ -1,1 +1,3 @@
-# terraform-templates
+# Terraform Templates
+
+Terraform Templates meta-repository.
