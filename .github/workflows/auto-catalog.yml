@@ -25,7 +25,7 @@ jobs:
           
     - name: Add Git Submodules
       run: "print 'org repos: ${{ steps.get_latest_release.get_org_repos.data }}'"
-      shell: python
+      shell: python3
 
     #- name: Commit Update
     #  uses: stefanzweifel/git-auto-commit-action@v4
