@@ -25,7 +25,7 @@ jobs:
           
     - name: Add Git Submodules
       run: |
-        repos=${{ steps.get_org_repos.outputs.data }}
+        repos=list(${{ steps.get_org_repos.outputs.data }})
         for repo in repos: 
           print(repo)
       shell: python
