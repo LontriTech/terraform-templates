@@ -27,10 +27,8 @@ jobs:
       env:
         DATA: ${{ steps.get_org_repos.outputs.data }}
       run: |
-        repos=list(os.environ['DATA'])
-        for repo in repos: 
-          print(repo)
-      shell: python
+        echo $DATA
+      shell: bash
 
     #- name: Commit Update
     #  uses: stefanzweifel/git-auto-commit-action@v4
