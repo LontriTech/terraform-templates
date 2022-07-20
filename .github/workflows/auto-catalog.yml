@@ -19,8 +19,7 @@ jobs:
       uses: octokit/request-action@v2.x
       id: get_org_repos
       with:
-        route: GET /orgs/{org}/repos
-        org: fr-platform
+        route: GET /orgs/fr-platform/repos
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
