@@ -25,7 +25,7 @@ jobs:
           
     - name: Add Git Submodules
       run: |
-        print('org repos: ${{ steps.get_latest_release.get_org_repos.data }}')
+        print('org repos: ${{ steps.get_org_repos.outputs.data }}')
       shell: python
 
     #- name: Commit Update
