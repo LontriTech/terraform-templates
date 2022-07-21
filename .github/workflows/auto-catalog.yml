@@ -26,7 +26,7 @@ jobs:
         | grep -E 'https://github\.com/fr-platform/terraform-.+-template\.git')
         for i in $repos
         do
-          echo $i | tr -d '\\"'
+          echo $i
         done
       shell: bash
 
