@@ -22,7 +22,8 @@ jobs:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL \
-        | jq '.[]| [.clone_url]| @csv'
+        | jq '.[]| [.clone_url]| @csv' \
+        | grep terraform
       shell: bash
 
     #- name: Commit Update
