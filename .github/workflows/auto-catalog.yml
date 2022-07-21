@@ -26,7 +26,7 @@ jobs:
         | grep -E 'https://github\.com/fr-platform/terraform-.+-template')
         for i in $repos
         do
-          git submodule add $(echo $i | tr --delete '\\"') || if [ $? =~ 'already exists in the index' ]; then echo "already present"; else echo $?; fi
+          git submodule add $(echo $i | tr --delete '\\"') || if $? grep 'already exists in the index'; then echo "already present"; else echo $?; fi
         done
       shell: bash
 
