@@ -22,7 +22,9 @@ jobs:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         repos=$(curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL \
-        | jq '.[]| [.clone_url]| @csv' \
+        | jq '.[]| [.clone_url] \
+        | @csv' \
+        | tr -d '\\"' \
         | grep -E 'https://github\.com/fr-platform/terraform-.+-template\.git')
         for i in "${repos[@]}"
         do
