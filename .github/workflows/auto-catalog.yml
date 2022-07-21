@@ -26,7 +26,7 @@ jobs:
         | grep -E 'https://github\.com/fr-platform/terraform-.+-template')
         for i in "${repos[@]}"
         do
-          git submodule add $i
+          echo $i | tr -d '\\"' | git submodule add
         done
       shell: bash
 
