@@ -14,23 +14,15 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.head_ref }}
-    
-    - name: Look for new repositories
-      uses: octokit/request-action@v2.x
-      id: get_org_repos
-      with:
-        route: GET /orgs/fr-platform/repos
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Add Git Submodules
       env:
-        DATA: ${{ steps.get_org_repos.outputs.data }}
+        BASE_URL: 'https://api.github.com/orgs/fr-platform/repos'
+        USERNAME: ${{ env.GITHUB_ACTOR }}
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        import os
-        for i in list(os.environ['DATA']):
-          print(i)
-      shell: python
+        curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL | jq '.[]| [.name]| @csv'|tr -d '
+      shell: bash
 
     #- name: Commit Update
     #  uses: stefanzweifel/git-auto-commit-action@v4
