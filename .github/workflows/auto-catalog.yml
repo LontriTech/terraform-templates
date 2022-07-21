@@ -24,7 +24,7 @@ jobs:
         repos=$(curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL \
         | jq '.[]| [.url] | @csv' \
         | grep -E 'https://github\.com/fr-platform/terraform-.+-template\.git')
-        for i in "${repos[@]}"
+        for i in $repos
         do
           git submodule add $($i | tr -d '\\"')
         done
