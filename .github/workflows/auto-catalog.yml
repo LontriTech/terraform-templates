@@ -30,8 +30,8 @@ jobs:
         done
       shell: bash
 
-    #- name: Commit Update
-    #  uses: stefanzweifel/git-auto-commit-action@v4
-    #  with:
-    #    commit_message: 'Catalog Auto Update'
+    - name: Commit Update
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'Catalog Auto Update'
         
