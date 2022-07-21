@@ -27,7 +27,9 @@ jobs:
       env:
         DATA: ${{ steps.get_org_repos.outputs.data }}
       run: |
-        print('test')
+        import os
+        for i in list(os.environ['DATA']):
+          print(i)
       shell: python
 
     #- name: Commit Update
