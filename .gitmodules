@@ -4,3 +4,9 @@
 [submodule "terraform-azurerm-template"]
 	path = terraform-azurerm-template
 	url = https://github.com/fr-platform/terraform-azurerm-template
+[submodule "terraform-github-template"]
+	path = terraform-github-template
+	url = https://github.com/fr-platform/terraform-github-template
+[submodule "terraform-aws-template"]
+	path = terraform-aws-template
+	url = https://github.com/fr-platform/terraform-aws-template
