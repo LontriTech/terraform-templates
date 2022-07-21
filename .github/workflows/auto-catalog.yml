@@ -23,7 +23,7 @@ jobs:
       run: |
         curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL \
         | jq '.[]| [.clone_url]| @csv' \
-        | grep 'terraform-[.+]-template'
+        | grep 'terraform-.+-template'
       shell: bash
 
     #- name: Commit Update
