@@ -27,11 +27,8 @@ jobs:
       env:
         DATA: ${{ steps.get_org_repos.outputs.data }}
       run: |
-        for i in $DATA
-        do
-          echo $i | grep https://
-        done
-      shell: bash
+        print('test')
+      shell: python
 
     #- name: Commit Update
     #  uses: stefanzweifel/git-auto-commit-action@v4
