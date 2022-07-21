@@ -21,7 +21,7 @@ jobs:
         USERNAME: ${{ env.GITHUB_ACTOR }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL | jq '.[]| [.name, .ssh_url, .clone_url]| @csv'
+        curl -s -u $USERNAME:$TOKEN -H 'Accept: application/vnd.github.v3+json' $BASE_URL | jq '.[]| [.name, .clone_url]| @csv'
       shell: bash
 
     #- name: Commit Update
